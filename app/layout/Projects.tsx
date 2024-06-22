@@ -33,7 +33,7 @@ const projects = () => {
   ];
 
   return (
-    <div className="flex bg-gray-200 text-black h-full items-center p-20">
+    <div className="flex bg-gray-400 text-black h-full items-center p-20">
       <div className="w-1/2">BADGES</div>
       <div className=" w-1/2">
         <Carousel
