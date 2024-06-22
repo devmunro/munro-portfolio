@@ -41,11 +41,14 @@ const projects = () => {
             align: "start",
           }}
           orientation="vertical"
-          className=" "
+          className=" shadow-xl"
         >
-          <CarouselContent className="h-[700px]">
+          <CarouselContent className="-mt-1 h-[700px]">
             {projects.map((project, index) => (
-              <CarouselItem key={index} className="pt-1 w-full h-full basis-1/2">
+              <CarouselItem
+                key={index}
+                className="pt-1 w-full h-full basis-1/2"
+              >
                 <Card className="h-full relative">
                   <CardContent className="flex items-center justify-center p-6 h-full">
                     <Image
