@@ -16,7 +16,7 @@ const projects = () => {
   const projectShowcase = [
     {
       title: "JS Project",
-      image: "https://via.placeholder.com/250",
+      image: "/project1.png",
       tools: ["javascript", "mongodb", "tailwind css"],
     },
     {
@@ -78,7 +78,7 @@ const projects = () => {
           <ul className="flex flex-wrap space-x-2">
             {languageOptions.map((option, index) => (
               <li key={index} value={option}>
-                <Button onClick={() => handleFilter(option)}>{option}</Button>
+                <Button className="p-4" onClick={() => handleFilter(option)}>{option}</Button>
               </li>
             ))}
           </ul>
@@ -129,12 +129,12 @@ const projects = () => {
                 className="pt-1 w-full h-full basis-1/2"
               >
                 <Card className="h-full relative">
-                  <CardContent className="flex items-center justify-center p-6 h-full relative">
+                  <CardContent className="flex items-center justify-center p-6 h-full relative bg-black">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      objectFit="cover"
+                      objectFit="contain"
                       quality={100}
                       priority
                     />

@@ -4,7 +4,7 @@ const header = () => {
   return (
     <div className="h-full flex items-center justify-center ">
       <div className="flex items-center justify-center w-1/2">
-        <Avatar>
+        <Avatar className="shadow-md shadow-white ">
           <AvatarImage src="https://github.com/devmunro.png" />
           <AvatarFallback>DM</AvatarFallback>
         </Avatar>
