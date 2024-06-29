@@ -1,4 +1,5 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import VerticalText from "./VerticalText";
 
 const experience = () => {
   const workExperience = [
@@ -50,28 +51,32 @@ const experience = () => {
   ];
 
   return (
-    <div className=" ">
-      <h1 className="text-left font-bold text-2xl mb-8 jump-in">Experience</h1>
-      <div className="flex flex-col gap-y-8 gap-x-2 items-center ">
-        {workExperience.map((job, index) => (
-          <div
-            key={index}
-            className={`w-1/2 ease-in ${index % 2 === 0 ? "self-end " : "self-start"} `}
-          >
-            <Card className="p-2">
-              <CardContent>
-                <div className="flex justify-between items-center mb-2">
-                  <h2 className="font-bold">{job.company}</h2>
-                  <span>
-                    {job.startDate} - {job.endDate}
-                  </span>
-                </div>
-                <p>{job.position}</p>
-                <p>({job.location})</p>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
+    <div className=" flex w-full ">
+      <VerticalText title="experience" />
+      <div className="w-full m-4">
+        <div className="flex flex-col gap-y-8 gap-x-2 items-center ">
+          {workExperience.map((job, index) => (
+            <div
+              key={index}
+              className={`w-1/2 ease-in ${
+                index % 2 === 0 ? "self-end " : "self-start"
+              } `}
+            >
+              <Card className="p-2">
+                <CardContent>
+                  <div className="flex justify-between items-center mb-2">
+                    <h2 className="font-bold">{job.company}</h2>
+                    <span>
+                      {job.startDate} - {job.endDate}
+                    </span>
+                  </div>
+                  <p>{job.position}</p>
+                  <p>({job.location})</p>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

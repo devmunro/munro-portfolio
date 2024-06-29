@@ -11,6 +11,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
+import VerticalText from "./VerticalText";
 
 const projects = () => {
   const projectShowcase = [
@@ -70,94 +71,97 @@ const projects = () => {
   };
 
   return (
-    <div className="flex bg-gray-400 text-black h-full justify-center items-center p-20">
-      <div className="w-1/2">
-        <h1>SKILLS</h1>
-        <div>
-          <label className=" mb-2 font-bold">Languages:</label>
-          <ul className="flex flex-wrap space-x-2">
-            {languageOptions.map((option, index) => (
-              <li key={index} value={option}>
-                <Button className="p-4" onClick={() => handleFilter(option)}>
-                  {option}
-                </Button>
-              </li>
-            ))}
-          </ul>
+    <div className="flex w-full">
+      <VerticalText title="projects"/>
+            <div className="flex bg-gray-400 text-black h-full justify-center items-center p-20 w-full">
+        <div className="w-1/2">
+          <h1>SKILLS</h1>
+          <div>
+            <label className=" mb-2 font-bold">Languages:</label>
+            <ul className="flex flex-wrap space-x-2">
+              {languageOptions.map((option, index) => (
+                <li key={index} value={option}>
+                  <Button className="p-4" onClick={() => handleFilter(option)}>
+                    {option}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <label className=" mb-2 font-bold">Frameworks:</label>
+            <ul className="flex  flex-wrap space-x-2 ">
+              {frameworkOptions.map((option, index) => (
+                <li key={index} value={option}>
+                  <Button onClick={() => handleFilter(option)}>{option}</Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <label className=" mb-2 font-bold">Database:</label>
+            <ul className="flex flex-wrap space-x-2 ">
+              {databaseOptions.map((option, index) => (
+                <li key={index} value={option}>
+                  <Button onClick={() => handleFilter(option)}>{option}</Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <label className=" mb-2 font-bold">CSS Libraries:</label>
+            <ul className="flex flex-wrap space-x-2 ">
+              {frontEndLibraries.map((option, index) => (
+                <li key={index} value={option}>
+                  <Button onClick={() => handleFilter(option)}>{option}</Button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div>
-          <label className=" mb-2 font-bold">Frameworks:</label>
-          <ul className="flex  flex-wrap space-x-2 ">
-            {frameworkOptions.map((option, index) => (
-              <li key={index} value={option}>
-                <Button onClick={() => handleFilter(option)}>{option}</Button>
-              </li>
-            ))}
-          </ul>
+        <div className=" w-1/3">
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+            orientation="vertical"
+            className=" shadow-xl"
+          >
+            <CarouselContent className="-mt-1 h-[700px] ">
+              {filteredProjects.map((project, index) => (
+                <CarouselItem
+                  key={index}
+                  className="pt-1 w-full h-full basis-1/2"
+                >
+                  <Card className="h-full relative">
+                    <CardContent className="flex items-center justify-center p-6 h-full relative bg-black">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        objectFit="contain"
+                        quality={100}
+                        priority
+                      />
+                      <h3 className="bottom-0 left-0 absolute">
+                        {project.title}
+                      </h3>
+                      <ul className="bottom-0 right-0 absolute flex">
+                        {project.tools.map((tool, index) => (
+                          <li key={index}>
+                            <Badge className="">{tool}</Badge>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
-        <div>
-          <label className=" mb-2 font-bold">Database:</label>
-          <ul className="flex flex-wrap space-x-2 ">
-            {databaseOptions.map((option, index) => (
-              <li key={index} value={option}>
-                <Button onClick={() => handleFilter(option)}>{option}</Button>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <label className=" mb-2 font-bold">CSS Libraries:</label>
-          <ul className="flex flex-wrap space-x-2 ">
-            {frontEndLibraries.map((option, index) => (
-              <li key={index} value={option}>
-                <Button onClick={() => handleFilter(option)}>{option}</Button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className=" w-1/3">
-        <Carousel
-          opts={{
-            align: "start",
-          }}
-          orientation="vertical"
-          className=" shadow-xl"
-        >
-          <CarouselContent className="-mt-1 h-[700px] ">
-            {filteredProjects.map((project, index) => (
-              <CarouselItem
-                key={index}
-                className="pt-1 w-full h-full basis-1/2"
-              >
-                <Card className="h-full relative">
-                  <CardContent className="flex items-center justify-center p-6 h-full relative bg-black">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      objectFit="contain"
-                      quality={100}
-                      priority
-                    />
-                    <h3 className="bottom-0 left-0 absolute">
-                      {project.title}
-                    </h3>
-                    <ul className="bottom-0 right-0 absolute flex">
-                      {project.tools.map((tool, index) => (
-                        <li key={index}>
-                          <Badge className="">{tool}</Badge>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
       </div>
     </div>
   );
