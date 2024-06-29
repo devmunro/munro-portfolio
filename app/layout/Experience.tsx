@@ -51,12 +51,12 @@ const experience = () => {
 
   return (
     <div className=" ">
-      <h1 className="text-left font-bold text-2xl mb-8">Experience</h1>
+      <h1 className="text-left font-bold text-2xl mb-8 jump-in">Experience</h1>
       <div className="flex flex-col gap-y-8 gap-x-2 items-center ">
         {workExperience.map((job, index) => (
           <div
             key={index}
-            className={`w-1/2 ${index % 2 === 0 ? "self-end " : "self-start"} `}
+            className={`w-1/2 ease-in ${index % 2 === 0 ? "self-end " : "self-start"} `}
           >
             <Card className="p-2">
               <CardContent>
