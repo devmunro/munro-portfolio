@@ -1,11 +1,11 @@
 const Navbar: React.FC = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full p-4 bg-black z-10">
+    <nav className="fixed top-0 left-0 w-full p-4 bg-black z-10 ">
       <ul className="flex justify-end space-x-4">
-        <li>Home</li>
-        <li>About</li>
-        <li>Projects</li>
-        <li>Contact</li>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Projects">Projects</a></li>
+        <li><a href="#Experience">Experience</a></li>
       </ul>
     </nav>
   );
