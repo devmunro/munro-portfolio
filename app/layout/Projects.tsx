@@ -15,14 +15,14 @@ import { useState } from "react";
 const projects = () => {
   const projectShowcase = [
     {
-      title: "JS Project",
+      title: "Restaurant(Savor)",
       image: "/project1.png",
-      tools: ["javascript", "mongodb", "tailwind css"],
+      tools: ["javascript", "react", "mongodb", "tailwind css"],
     },
     {
-      title: "Python Project",
-      image: "https://via.placeholder.com/150",
-      tools: ["python", "django", "sqlite"],
+      title: "Movie DB",
+      image: "/project2.png",
+      tools: ["javascript", "next.js", "tailwind css"],
     },
     {
       title: "Next.JS Project",
