@@ -62,15 +62,15 @@ const projects = () => {
   const frontEndLibraries = ["Tailwind CSS", "Bootstrap"];
 
   const handleFilter = (value) => {
-    console.log(value)
+    console.log(value);
     const includedProjects = projectShowcase.filter((project) =>
       project.tools.includes(value.toLowerCase())
     );
-    setFilteredProjects(includedProjects)
+    setFilteredProjects(includedProjects);
   };
 
   return (
-    <div className="flex bg-gray-400 text-black h-full items-center p-20">
+    <div className="flex bg-gray-400 text-black h-full justify-center items-center p-20">
       <div className="w-1/2">
         <h1>SKILLS</h1>
         <div>
@@ -78,7 +78,9 @@ const projects = () => {
           <ul className="flex flex-wrap space-x-2">
             {languageOptions.map((option, index) => (
               <li key={index} value={option}>
-                <Button className="p-4" onClick={() => handleFilter(option)}>{option}</Button>
+                <Button className="p-4" onClick={() => handleFilter(option)}>
+                  {option}
+                </Button>
               </li>
             ))}
           </ul>
@@ -89,7 +91,7 @@ const projects = () => {
             {frameworkOptions.map((option, index) => (
               <li key={index} value={option}>
                 <Button onClick={() => handleFilter(option)}>{option}</Button>
-                </li>
+              </li>
             ))}
           </ul>
         </div>
@@ -99,7 +101,7 @@ const projects = () => {
             {databaseOptions.map((option, index) => (
               <li key={index} value={option}>
                 <Button onClick={() => handleFilter(option)}>{option}</Button>
-                </li>
+              </li>
             ))}
           </ul>
         </div>
@@ -109,12 +111,12 @@ const projects = () => {
             {frontEndLibraries.map((option, index) => (
               <li key={index} value={option}>
                 <Button onClick={() => handleFilter(option)}>{option}</Button>
-                </li>
+              </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className=" w-1/2">
+      <div className=" w-1/3">
         <Carousel
           opts={{
             align: "start",
@@ -122,7 +124,7 @@ const projects = () => {
           orientation="vertical"
           className=" shadow-xl"
         >
-          <CarouselContent className="-mt-1 h-[700px]">
+          <CarouselContent className="-mt-1 h-[700px] ">
             {filteredProjects.map((project, index) => (
               <CarouselItem
                 key={index}
