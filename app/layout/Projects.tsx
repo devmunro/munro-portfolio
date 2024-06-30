@@ -88,7 +88,7 @@ const Projects = () => {
   };
 
   const handleFilter = (value) => {
-    if(value === "reset") {
+    if (value === "reset") {
       setFilteredProjects(projectShowcase);
       return;
     }
@@ -99,7 +99,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="flex w-full h-full bg-gray-900 ">
+    <div className="flex w-full h-full bg-gray-800 ">
       <VerticalText title="projects" />
       <div className="w-full h-full p-8 m-8 flex items-center justify-center flex-col ">
         <div>
@@ -125,13 +125,19 @@ const Projects = () => {
                 </Button>
               </li>
             ))}
-            <Button variant="link" className=" text-white" onClick={() => handleFilter("reset")}>reset</Button>
+            <Button
+              variant="link"
+              className=" text-white"
+              onClick={() => handleFilter("reset")}
+            >
+              reset
+            </Button>
           </ul>
         </div>
-        <div className="grid grid-cols-2 gap-4 m-8  w-full h-full">
+        <div className="grid grid-cols-2 gap-4 m-8  w-full h-full  shadow-2xl">
           {currentProjects.map((project, index) => (
-            <Card key={index} className="shadow-2xl p-2">
-              <CardContent className="flex items-center justify-center p-6 h-full relative bg-black">
+            <Card key={index} className="shadow-2xl border-none ">
+              <CardContent className="flex items-center justify-center h-full relative bg-black rounded-lg">
                 <Image
                   src={project.image}
                   alt={project.title}
