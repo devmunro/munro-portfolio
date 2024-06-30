@@ -43,7 +43,7 @@ const Contact = () => {
   return (
     <div className="flex w-full h-full">
       <VerticalText title="contact" />
-      <div className="flex w-full justify-between self-center items-center mx-20 border-4">
+      <div className="flex w-full justify-between self-center items-center md:mx-56 border-4">
         <div className="flex-col flex items-center justify-center w-full self-center">
           <Avatar className="w-48 h-48 items-center">
             <AvatarImage src="https://github.com/devmunro.png" />
