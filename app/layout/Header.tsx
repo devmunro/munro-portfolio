@@ -1,4 +1,7 @@
+"use client"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Typewriter from "@/lib/typerwriter";
+
 
 const header = () => {
   return (
@@ -12,7 +15,8 @@ const header = () => {
       <div className="w-1/2 text-center text-7xl space-y-8 bg-black bg-opacity-40 h-full  flex-col flex justify-center">
         <h1 className="font-bold uppercase ">Hi, Im DAVID</h1>
         <h2 className="text-4xl">I am a ... </h2>
-        <h3 className="font-semibold">Fullstack developer</h3>
+        <h3 className="font-semibold"></h3>
+        <Typewriter text="Fullstack developer" speed={100} />
       </div>
     </div>
   );

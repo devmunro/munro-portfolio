@@ -1,19 +1,21 @@
 "use client";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import VerticalText from "./VerticalText";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
-const projects = () => {
+const Projects = () => {
   const projectShowcase = [
     {
       title: "Restaurant(Savor)",
@@ -42,28 +44,54 @@ const projects = () => {
     },
   ];
   const [filteredProjects, setFilteredProjects] = useState(projectShowcase);
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 2;
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+
+  // Get the projects for the current page
+  const currentProjects = filteredProjects.slice(
+    (currentPage - 1) * projectsPerPage,
+    currentPage * projectsPerPage
+  );
 
   const languageOptions = [
-    "JavaScript",
-    "TypeScript",
-    "Python",
-    "PHP",
-    "Java",
-    "C#",
+    { name: "JavaScript", logoUrl: "/skills/javascript.png" },
+    { name: "TypeScript", logoUrl: "/skills/typescript.png" },
+    { name: "Python", logoUrl: "/skills/python.png" },
+    { name: "PHP", logoUrl: "/skills/php.png" },
   ];
+
   const frameworkOptions = [
-    "React",
-    "Angular",
-    "Vue.js",
-    "Next.js",
-    "Express.js",
-    "Laravel",
+    { name: "React", logoUrl: "/skills/react.png" },
+    { name: "Next.js", logoUrl: "/skills/nextjs.png" },
+    { name: "Express.js", logoUrl: "/skills/express.png" },
   ];
-  const databaseOptions = ["MongoDB", "MySQL", "PostgreSQL", "Firebase"];
-  const frontEndLibraries = ["Tailwind CSS", "Bootstrap"];
+
+  const databaseOptions = [
+    { name: "MongoDB", logoUrl: "/skills/mongodb.png" },
+    { name: "MySQL", logoUrl: "/skills/mysql.png" },
+    { name: "PostgreSQL", logoUrl: "/skills/postgresql.png" },
+    { name: "Firebase", logoUrl: "/skills/firebase.png" },
+  ];
+
+  const frontEndLibraries = [
+    { name: "Tailwind CSS", logoUrl: "/skills/tailwind.png" },
+    { name: "Bootstrap", logoUrl: "/skills/bootstrap.png" },
+  ];
+
+  // Handle page change
+  const handlePageChange = (e, page) => {
+    e.preventDefault();
+    setCurrentPage(page);
+  };
 
   const handleFilter = (value) => {
-    console.log(value);
+    if(value === "reset") {
+      setFilteredProjects(projectShowcase);
+      return;
+    }
     const includedProjects = projectShowcase.filter((project) =>
       project.tools.includes(value.toLowerCase())
     );
@@ -71,100 +99,91 @@ const projects = () => {
   };
 
   return (
-    <div className="flex w-full h-full bg-indigo-950">
+    <div className="flex w-full h-full bg-gray-900 ">
       <VerticalText title="projects" />
-      <div className="flex  text-black h-full justify-center items-center p-20 w-full">
-        <div className="w-1/2">
-          <h1>SKILLS</h1>
-          <div>
-            <label className=" mb-2 font-bold">Languages:</label>
-            <ul className="flex flex-wrap space-x-2">
-              {languageOptions.map((option, index) => (
-                <li key={index} value={option}>
-                  <Button className="p-4" onClick={() => handleFilter(option)}>
-                    {option}
-                  </Button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <label className=" mb-2 font-bold">Frameworks:</label>
-            <ul className="flex  flex-wrap space-x-2 ">
-              {frameworkOptions.map((option, index) => (
-                <li key={index} value={option}>
-                  <Button onClick={() => handleFilter(option)}>{option}</Button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <label className=" mb-2 font-bold">Database:</label>
-            <ul className="flex flex-wrap space-x-2 ">
-              {databaseOptions.map((option, index) => (
-                <li key={index} value={option}>
-                  <Button onClick={() => handleFilter(option)}>{option}</Button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <label className=" mb-2 font-bold">CSS Libraries:</label>
-            <ul className="flex flex-wrap space-x-2 ">
-              {frontEndLibraries.map((option, index) => (
-                <li key={index} value={option}>
-                  <Button onClick={() => handleFilter(option)}>{option}</Button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className=" w-1/3 shadow-2xl">
-          <Carousel
-            opts={{
-              align: "start",
-            }}
-            orientation="vertical"
-            className=" shadow-xl"
-          >
-            <CarouselContent className="-mt-1 h-[700px] ">
-              {filteredProjects.map((project, index) => (
-                <CarouselItem
-                  key={index}
-                  className="pt-1 w-full h-full basis-1/2"
+      <div className="w-full h-full p-8 m-8 flex items-center justify-center flex-col ">
+        <div>
+          <label className="mb-2 font-bold">Filter by tool:</label>
+          <ul className="flex flex-wrap gap-2 p-4">
+            {[
+              ...languageOptions,
+              ...frameworkOptions,
+              ...databaseOptions,
+              ...frontEndLibraries,
+            ].map((tool, index) => (
+              <li key={index}>
+                <Button
+                  className=" text-white"
+                  onClick={() => handleFilter(tool.name)}
                 >
-                  <Card className="h-full relative">
-                    <CardContent className="flex items-center justify-center p-6 h-full relative bg-black">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        objectFit="contain"
-                        quality={100}
-                        priority
-                      />
-                      <h3 className="bottom-0 left-0 absolute">
-                        {project.title}
-                      </h3>
-                      <ul className="bottom-0 right-0 absolute flex">
-                        {project.tools.map((tool, index) => (
-                          <li key={index}>
-                            <Badge className="">{tool}</Badge>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+                  <img
+                    src={tool.logoUrl}
+                    alt={tool.name}
+                    className="w-6 h-6 mr-2"
+                  />
+                  <span>{tool.name}</span>
+                </Button>
+              </li>
+            ))}
+            <Button variant="link" className=" text-white" onClick={() => handleFilter("reset")}>reset</Button>
+          </ul>
         </div>
+        <div className="grid grid-cols-2 gap-4 m-8  w-full h-full">
+          {currentProjects.map((project, index) => (
+            <Card key={index} className="shadow-2xl p-2">
+              <CardContent className="flex items-center justify-center p-6 h-full relative bg-black">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-contain"
+                />
+                <h3 className="bottom-0 left-0 absolute text-white bg-indigo-950 p-4 font-bold">
+                  {project.title}
+                </h3>
+                <ul className="bottom-0 right-0 absolute flex space-x-2">
+                  {project.tools.map((tool, index) => (
+                    <li key={index}>
+                      <Badge className="bg-gray-700 text-white">{tool}</Badge>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <Pagination className="mt-4">
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                href="#"
+                onClick={(e) => handlePageChange(e, currentPage - 1)}
+                disabled={currentPage === 1}
+              />
+            </PaginationItem>
+            {[...Array(totalPages).keys()].map((pageNumber) => (
+              <PaginationItem key={pageNumber}>
+                <PaginationLink
+                  href="#"
+                  onClick={(e) => handlePageChange(e, pageNumber + 1)}
+                >
+                  {pageNumber + 1}
+                </PaginationLink>
+              </PaginationItem>
+            ))}
+            <PaginationItem>
+              <PaginationNext
+                href="#"
+                onClick={(e) => handlePageChange(e, currentPage + 1)}
+                disabled={currentPage === totalPages}
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
       </div>
     </div>
   );
 };
 
-export default projects;
+export default Projects;
