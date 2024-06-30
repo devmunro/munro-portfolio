@@ -9,10 +9,10 @@ export default function Home() {
     <div>
       <div className="bg-black text-white scroll-smooth">
         <Navbar />
-        <div id="Home" className="pt-16 h-screen ">
+        <div id="Home" className="pt-16 h-screen">
           <Header />
         </div>
-        <div id="Projects" className="pt-16 h-screen">
+        <div id="Projects" className="pt-16 h-screen  ">
           <Projects />
         </div>
         <div id="Experience" className="pt-16 h-screen">

@@ -64,21 +64,21 @@ const Projects = () => {
   ];
 
   const frameworkOptions = [
-    { name: "React", logoUrl: "/skills/react.png" },
-    { name: "Next.js", logoUrl: "/skills/nextjs.png" },
-    { name: "Express.js", logoUrl: "/skills/express.png" },
+    // { name: "React", logoUrl: "/skills/react.png" },
+    // { name: "Next.js", logoUrl: "/skills/nextjs.png" },
+    // { name: "Express.js", logoUrl: "/skills/express.png" },
   ];
 
   const databaseOptions = [
-    { name: "MongoDB", logoUrl: "/skills/mongodb.png" },
-    { name: "MySQL", logoUrl: "/skills/mysql.png" },
-    { name: "PostgreSQL", logoUrl: "/skills/postgresql.png" },
-    { name: "Firebase", logoUrl: "/skills/firebase.png" },
+    // { name: "MongoDB", logoUrl: "/skills/mongodb.png" },
+    // { name: "MySQL", logoUrl: "/skills/mysql.png" },
+    // { name: "PostgreSQL", logoUrl: "/skills/postgresql.png" },
+    // { name: "Firebase", logoUrl: "/skills/firebase.png" },
   ];
 
   const frontEndLibraries = [
-    { name: "Tailwind CSS", logoUrl: "/skills/tailwind.png" },
-    { name: "Bootstrap", logoUrl: "/skills/bootstrap.png" },
+    // { name: "Tailwind CSS", logoUrl: "/skills/tailwind.png" },
+    // { name: "Bootstrap", logoUrl: "/skills/bootstrap.png" },
   ];
 
   // Handle page change
@@ -101,10 +101,11 @@ const Projects = () => {
   return (
     <div className="flex w-full h-full bg-gray-800 ">
       <VerticalText title="projects" />
-      <div className="w-full h-full p-8 m-8 flex items-center justify-center flex-col ">
-        <div>
-          <label className="mb-2 font-bold">Filter by tool:</label>
-          <ul className="flex flex-wrap gap-2 p-4">
+      <div className="w-full h-full p-8 m-8 flex items-center justify-center flex-col animate-slide ">
+        <div className="fadeIn">
+          <ul className="flex items-center flex-wrap gap-2 p-4">
+            <label className=" font-bold">Filter:</label>
+
             {[
               ...languageOptions,
               ...frameworkOptions,

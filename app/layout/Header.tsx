@@ -16,8 +16,11 @@ const header = () => {
         <h1 className="font-bold uppercase ">Hi, Im DAVID</h1>
         <h2 className="text-4xl">I am a ... </h2>
         <h3 className="font-semibold"></h3>
-        <Typewriter text="Fullstack developer" speed={100} />
+        <div>
+        <Typewriter words={["Fullstack developer", "Game Developer", "Software Engineer", "Wordpress Developer"]}  />
+        </div>
       </div>
+      
     </div>
   );
 };

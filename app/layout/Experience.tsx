@@ -85,7 +85,7 @@ const experience = () => {
   return (
     <div className=" flex w-full h-full ">
       <VerticalText title="experience" />
-      <div className="w-full flex center ">
+      <div className="w-full flex center animate-slide">
         <div className="flex gap-24 w-full items-center justify-center">
           {/* work experience map */}
           <div className="flex flex-col gap-y-8 gap-x-2 w-1/3  ">
