@@ -71,9 +71,9 @@ const projects = () => {
   };
 
   return (
-    <div className="flex w-full h-full">
+    <div className="flex w-full h-full bg-indigo-950">
       <VerticalText title="projects" />
-      <div className="flex bg-gray-400 text-black h-full justify-center items-center p-20 w-full">
+      <div className="flex  text-black h-full justify-center items-center p-20 w-full">
         <div className="w-1/2">
           <h1>SKILLS</h1>
           <div>
@@ -119,7 +119,7 @@ const projects = () => {
             </ul>
           </div>
         </div>
-        <div className=" w-1/3">
+        <div className=" w-1/3 shadow-2xl">
           <Carousel
             opts={{
               align: "start",
