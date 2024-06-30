@@ -71,9 +71,9 @@ const projects = () => {
   };
 
   return (
-    <div className="flex w-full">
-      <VerticalText title="projects"/>
-            <div className="flex bg-gray-400 text-black h-full justify-center items-center p-20 w-full">
+    <div className="flex w-full h-full">
+      <VerticalText title="projects" />
+      <div className="flex bg-gray-400 text-black h-full justify-center items-center p-20 w-full">
         <div className="w-1/2">
           <h1>SKILLS</h1>
           <div>

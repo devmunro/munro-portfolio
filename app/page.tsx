@@ -2,6 +2,7 @@ import Navbar from "./layout/Navbar";
 import Header from "./layout/Header";
 import Projects from "./layout/Projects";
 import Experience from "./layout/Experience";
+import Contact from "./layout/Contact";
 
 export default function Home() {
   return (
@@ -16,6 +17,9 @@ export default function Home() {
         </div>
         <div id="Experience" className="pt-16 h-screen">
           <Experience />
+        </div>
+        <div id="Contact" className="pt-16 h-screen">
+          <Contact />
         </div>
       </div>
     </div>

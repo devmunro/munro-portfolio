@@ -83,7 +83,7 @@ const experience = () => {
   ];
 
   return (
-    <div className=" flex w-full  ">
+    <div className=" flex w-full h-full ">
       <VerticalText title="experience" />
       <div className="w-full flex center ">
         <div className="flex gap-24 w-full items-center justify-center">
