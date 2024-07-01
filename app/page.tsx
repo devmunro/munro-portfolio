@@ -7,18 +7,18 @@ import Contact from "./layout/Contact";
 export default function Home() {
   return (
     <div>
-      <div className="bg-black text-white scroll-smooth">
+      <div className="bg-black text-white ">
         <Navbar />
-        <div id="Home" className="pt-16 h-screen">
+        <div id="Home" className="pt-16 h-screen ">
           <Header />
         </div>
         <div id="Projects" className="pt-16 h-screen  ">
           <Projects />
         </div>
-        <div id="Experience" className="pt-16 h-screen">
+        <div id="Experience" className="pt-16 h-screen ">
           <Experience />
         </div>
-        <div id="Contact" className="pt-16 h-screen">
+        <div id="Contact" className="pt-16 h-screen ">
           <Contact />
         </div>
       </div>
