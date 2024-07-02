@@ -83,7 +83,7 @@ const Journey = () => {
                 <AvatarFallback className="text-black">LOGO</AvatarFallback>
               </Avatar>
               <Card className="p-2 w-full">
-                <CardContent className=" p-4">
+                <CardContent className=" p-2">
                   <div className="flex justify-between items-center  h-full">
                     <h2 className="font-bold text-sm md:text-lg ">
                       {job.company}

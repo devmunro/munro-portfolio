@@ -126,12 +126,12 @@ const Portfolio = () => {
         </Button>
       </ul>
 
-      <div className="w-full h-full p-2 flex flex-col items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 w-full h-full mt-2 md:mt-4 md:p-8">
+      <div className="w-full h-full p-2 flex flex-col items-center">
+        <div className="grid justify-center  grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 w-full h-full mt-2 md:mt-4 md:p-8">
           {currentProjects.map((project, index) => (
             <Card
               key={index}
-              className="shadow-2xl transform transition-transform duration-300 hover:scale-105 m-4"
+              className="justify-center shadow-2xl transform transition-transform duration-300 hover:scale-105 m-4"
             >
               <CardContent className="flex items-center justify-center h-full w-full relative bg-black rounded-lg border-4">
                 <Image
