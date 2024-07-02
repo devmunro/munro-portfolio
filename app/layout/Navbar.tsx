@@ -34,11 +34,11 @@ const Navbar: React.FC = () => {
             Home
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="#About" className="text-white block md:inline">
             About
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link href="#Portfolio" className="text-white block md:inline">
             Portfolio

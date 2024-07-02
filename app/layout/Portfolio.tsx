@@ -9,7 +9,7 @@ import {
   PaginationItem,
 } from "@/components/ui/pagination";
 
-const Projects = () => {
+const Portfolio = () => {
   const projectShowcase = [
     {
       title: "Restaurant(Savor)",
@@ -213,4 +213,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Portfolio;
