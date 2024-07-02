@@ -29,7 +29,7 @@ const Education = () => {
       ],
     },
     {
-      institution: "Open University",
+      company: "Open University",
       degree: "Bachelor of Science (B.S.) Computer Science and Statistics",
       startDate: "",
       endDate: "Expected Graduation: 2027",
@@ -61,7 +61,7 @@ const Education = () => {
 
       <div className="w-full flex justify-center p-2 md:p-8">
         {/* education map */}
-        <div className="flex flex-col gap-4 w-full md:w-1/2 ">
+        <div className="flex flex-col justify-center gap-4 w-full md:w-1/2 ">
           {education.map((edu, index) => (
             <div
               key={index}
@@ -77,14 +77,14 @@ const Education = () => {
                     <h2 className="font-bold text-sm md:text-lg">
                       {edu.company}
                     </h2>
-                    <span className="text-xs md:text-sm">
+                    <span className="text-xs italic md:text-sm">
                       {edu.startDate} - {edu.endDate}
                     </span>
                   </div>
-                  <h2 className="font-semibold text-xs md:text-sm">
+                  <h2 className="font-semibold text-left text-xs md:text-sm">
                     {edu.degree}
                   </h2>
-                  <p className="text-xs md:text-sm">{edu.details}</p>
+                  <p className="text-xs md:text-sm text-justify">{edu.details}</p>
                 </CardContent>
               </Card>
             </div>
