@@ -99,68 +99,68 @@ const Projects = () => {
   };
 
   return (
-    <div className="flex w-full h-full bg-gray-800 ">
-      <VerticalText title="projects" />
-      <div className="w-full h-full p-8 m-8 flex items-center justify-center flex-col animate-slide ">
-        <div className="fadeIn">
-          <ul className="flex items-center flex-wrap gap-2 p-4">
-            <label className=" font-bold">Filter:</label>
-
+    <div className="flex md:flex-row w-full h-full bg-blue-950">
+      <VerticalText title="PORTFOLIO" />
+      <div className="w-full h-full p-2 md:p-8 flex flex-col items-center justify-center">
+        <div className="w-full ">
+          <ul className="flex items-center justify-end gap-2 p-2 text-xs md:text-sm">
+            <label className="font-bold text-white mb-2 md:mb-0">Filter:</label>
             {[
               ...languageOptions,
               ...frameworkOptions,
               ...databaseOptions,
               ...frontEndLibraries,
             ].map((tool, index) => (
-              <li key={index}>
+              <li key={index} className="mb-2 md:mb-0">
                 <Button
-                  className=" text-white"
+                  className="text-white flex items-center text-xs md:text-sm p-2"
                   onClick={() => handleFilter(tool.name)}
                 >
                   <img
                     src={tool.logoUrl}
                     alt={tool.name}
-                    className="w-6 h-6 mr-2"
+                    className="w-6 h-6 md:mr-2"
                   />
-                  <span>{tool.name}</span>
+                  <span className="hidden md:block">{tool.name}</span>
                 </Button>
               </li>
             ))}
             <Button
               variant="link"
-              className=" text-white"
+              className="text-white text-xs md:text-sm"
               onClick={() => handleFilter("reset")}
             >
               reset
             </Button>
           </ul>
         </div>
-        <div className="grid grid-cols-2 gap-4 m-8  w-full h-full  shadow-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 w-full h-full shadow-2xl mt-2 md:mt-4">
           {currentProjects.map((project, index) => (
             <Card key={index} className="shadow-2xl border-none ">
-              <CardContent className="flex items-center justify-center h-full relative bg-black rounded-lg">
+              <CardContent className="flex items-center justify-center h-full w-full relative bg-black rounded-lg p-2 border-4 ">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-contain"
+                  className="object-fill md:object-contain"
                 />
-                <h3 className="bottom-0 left-0 absolute text-white bg-indigo-950 p-4 font-bold">
+                <h3 className="absolute bottom-0 w-full text-white bg-red-900 p-2 md:p-4 font-bold text-xs md:text-sm">
                   {project.title}
                 </h3>
-                <ul className="bottom-0 right-0 absolute flex space-x-2">
+                {/* <ul className="absolute bottom-0 right-0 flex space-x-1 md:space-x-2 p-1 md:p-2">
                   {project.tools.map((tool, index) => (
                     <li key={index}>
-                      <Badge className="bg-gray-700 text-white">{tool}</Badge>
+                      <Badge className="bg-gray-700 text-white text-xs md:text-sm">
+                        {tool}
+                      </Badge>
                     </li>
                   ))}
-                </ul>
+                </ul> */}
               </CardContent>
             </Card>
           ))}
         </div>
-
-        <Pagination className="mt-4">
+        <Pagination className="mt-2 md:mt-4 w-full flex justify-center">
           <PaginationContent>
             <PaginationItem>
               <PaginationPrevious

@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
         </button>
       </div>
       <ul
-        className={`md:flex md:justify-end md:space-x-4 ${
+        className={`md:flex md:justify-end md:space-x-4 space-y-2 ${
           isOpen ? "block" : "hidden"
         } md:block`}
       >

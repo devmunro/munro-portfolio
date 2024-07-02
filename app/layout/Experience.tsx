@@ -83,59 +83,61 @@ const experience = () => {
   ];
 
   return (
-    <div className=" flex w-full h-full ">
-      <VerticalText title="experience" />
-      <div className="w-full flex center animate-slide">
-        <div className="flex gap-24 w-full items-center justify-center">
-          {/* work experience map */}
-          <div className="flex flex-col gap-y-8 gap-x-2 w-1/3  ">
-            {workExperience.map((job, index) => (
-              <div key={index} className="flex items-center space-x-2 ">
-                <Avatar className="w-24 h-24 items-center rounded-none border-4">
-                  <AvatarImage src={job.logo} />
-                  <AvatarFallback className="text-black">LOGO</AvatarFallback>
-                </Avatar>
-                <Card className="p-2 w-full">
-                  <CardContent>
-                    <div className="flex justify-between items-center mb-2">
-                      <h2 className="font-bold">{job.company}</h2>
-                      <span>
-                        {job.startDate} - {job.endDate}
-                      </span>
-                    </div>
-                    <p>{job.position}</p>
-                    <p>({job.location})</p>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
+    <div className="flex flex-col md:flex-row w-full h-full bg-black">
+            <VerticalText title="Experience" />
+
+  <div className="w-full flex justify-center p-2 md:p-8">
+    <div className="flex flex-col md:flex-row gap-4 w-full items-center justify-center">
+      {/* work experience map */}
+      <div className="flex flex-col gap-4 w-full md:w-1/2">
+        {workExperience.map((job, index) => (
+          <div key={index} className="flex items-center space-x-2 p-2 bg-red-900 rounded-md shadow-md">
+            <Avatar className="w-16 h-16 md:w-24 md:h-24 items-center rounded-none border-2 md:border-4">
+              <AvatarImage src={job.logo} />
+              <AvatarFallback className="text-black">LOGO</AvatarFallback>
+            </Avatar>
+            <Card className="p-2 w-full">
+              <CardContent>
+                <div className="flex justify-between items-center mb-2">
+                  <h2 className="font-bold text-sm md:text-lg">{job.company}</h2>
+                  <span className="text-xs md:text-sm">
+                    {job.startDate} - {job.endDate}
+                  </span>
+                </div>
+                <p className="text-xs md:text-sm">{job.position}</p>
+                <p className="text-xs md:text-sm">({job.location})</p>
+              </CardContent>
+            </Card>
           </div>
-          {/* education map */}
-          <div className="flex flex-col gap-y-8 gap-x-2  w-1/3  ">
-            {education.map((edu, index) => (
-              <div key={index} className="flex items-center space-x-2">
-                <Avatar className="w-24 h-24 items-center rounded-none border-4">
-                  <AvatarImage src={edu.logo} />
-                  <AvatarFallback className="text-black">DM</AvatarFallback>
-                </Avatar>
-                <Card className="p-2 w-full">
-                  <CardContent>
-                    <div className="flex justify-between items-center mb-2">
-                      <h2 className="font-bold">{edu.company}</h2>
-                      <span>
-                        {edu.startDate} - {edu.endDate}
-                      </span>
-                    </div>
-                    <h2 className="font-semibold">{edu.degree}</h2>
-                    <p>{edu.details}</p>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
+        ))}
+      </div>
+      {/* education map */}
+      <div className="flex flex-col gap-4 w-full md:w-1/2 ">
+        {education.map((edu, index) => (
+          <div key={index} className="flex items-center space-x-2 p-2 text-white rounded-md shadow-md bg-indigo-900">
+            <Avatar className="w-16 h-16 md:w-24 md:h-24 items-center rounded-none border-2 md:border-4">
+              <AvatarImage src={edu.logo} />
+              <AvatarFallback className="text-black">DM</AvatarFallback>
+            </Avatar>
+            <Card className="p-2 w-full">
+              <CardContent>
+                <div className="flex justify-between items-center mb-2">
+                  <h2 className="font-bold text-sm md:text-lg">{edu.company}</h2>
+                  <span className="text-xs md:text-sm">
+                    {edu.startDate} - {edu.endDate}
+                  </span>
+                </div>
+                <h2 className="font-semibold text-xs md:text-sm">{edu.degree}</h2>
+                <p className="text-xs md:text-sm">{edu.details}</p>
+              </CardContent>
+            </Card>
           </div>
-        </div>
+        ))}
       </div>
     </div>
+  </div>
+</div>
+
   );
 };
 
