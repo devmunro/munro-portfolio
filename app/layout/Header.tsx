@@ -33,10 +33,10 @@ const Header = () => {
       </div>
       <Button
         variant="link"
-        className="animate-bounce text-white scroll-smooth absolute bottom-10 md:hidden"
+        className="animate-bounce text-white scroll-smooth absolute bottom-10"
       >
         <Link href="#Projects">
-          <ArrowDown className="w-16 h-16 p-2 rounded-full bg-black md:hidden" />
+          <ArrowDown className="w-16 h-16 p-2 rounded-full bg-black " />
         </Link>
       </Button>
     </div>

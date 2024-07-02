@@ -59,25 +59,20 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        fadeIn: {
-          from: { opacity: '0' },
-          to: { opacity: '1' },
-        },
-        slideIn: {
-          from: {
-            transform: 'translateY(100%)',
-            opacity: '0',
+       
+        rotate360: {
+          '0%': {
+            transform: 'rotate(0deg)',
           },
-          to: {
-            transform: 'translateY(0)',
-            opacity: '1',
+          '100%': {
+            transform: 'rotate(360deg)',
           },
         },
       },
       animation: {
-        fade: 'fadeIn 5s ease-in-out',
-        slide: 'slideIn 2s ease-in-out', 
-      },
+        rotate: 'rotate360 1s linear infinite',
+
+      }
     },
   },
 } satisfies Config

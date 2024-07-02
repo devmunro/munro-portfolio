@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import VerticalText from "./VerticalText";
 import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Github, Linkedin } from "lucide-react";
@@ -54,7 +53,6 @@ const Contact = () => {
 
   return (
     <div className="flex w-full h-full">
-      <VerticalText title="contact" />
       <div className="flex w-full h-2/3 justify-between self-center items-center md:mx-72 border-4 bg-indigo-900">
         <div className="flex-col flex items-center justify-center w-full self-center h-full">
           <Avatar className="w-48 h-48 items-center">

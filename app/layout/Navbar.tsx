@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
         </button>
       </div>
       <ul
-        className={`md:flex md:justify-end md:space-x-4 space-y-2 ${
+        className={`md:flex md:justify-end md:space-x-4 p-2 ${
           isOpen ? "block" : "hidden"
         } md:block`}
       >
@@ -40,13 +40,18 @@ const Navbar: React.FC = () => {
           </Link>
         </li>
         <li>
-          <Link href="#Projects" className="text-white block md:inline">
-            Projects
+          <Link href="#Portfolio" className="text-white block md:inline">
+            Portfolio
           </Link>
         </li>
         <li>
-          <Link href="#Experience" className="text-white block md:inline">
-            Experience
+          <Link href="#Journey" className="text-white block md:inline">
+            Journey
+          </Link>
+        </li>
+        <li>
+          <Link href="#Skills" className="text-white block md:inline">
+            Skills
           </Link>
         </li>
         <li>
