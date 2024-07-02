@@ -14,11 +14,11 @@ const Header = () => {
           <AvatarFallback>DM</AvatarFallback>
         </Avatar>
       </div>
-      <div className=" w-full md:w-1/2 md:h-full md:text-4xl p-4 text-md md:space-y-8 flex flex-col text-center items-center justify-center md:bg-black md:bg-opacity-40">
-        <h1 className="font-bold uppercase text-2xl lg:text-6xl">
+      <div className=" w-full md:w-1/2 md:h-full p-4 md:space-y-8 flex flex-col text-center items-center justify-center md:bg-black md:bg-opacity-40">
+        <h1 className="font-bold uppercase text-2xl md:text-4xl lg:text-6xl">
           Hi, my name is David
         </h1>
-        <h2 className="md:text-4xl text-md">I am a ...</h2>
+        <h2 className="md:text-2xl text-md">I am a ...</h2>
         <h3 className=""></h3>
         <div>
           <Typewriter
