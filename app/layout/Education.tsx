@@ -19,8 +19,8 @@ const Education = () => {
     {
       company: "Masterschool",
       degree: "Software Engineering",
-      startDate: "July 2022",
-      endDate: "Jan 2023",
+      startDate: "2022",
+      endDate: "2023",
       logo: "logos/masterschool.jpg",
       details: [
         "Participated in an immersive, 7-month software engineering training program.",
@@ -29,10 +29,10 @@ const Education = () => {
       ],
     },
     {
-      company: "Open University",
+      company: "OU",
       degree: "Bachelor of Science (B.S.) Computer Science and Statistics",
       startDate: "",
-      endDate: "Expected Graduation: 2027",
+      endDate: "Expected: 2027",
       logo: "logos/OU.png",
 
       details: [
@@ -43,14 +43,14 @@ const Education = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-start md:items-center  text-center w-full h-full bg-black">
+    <div className="flex flex-col justify-start md:items-center  text-center w-full h-full bg-black px-4">
       <h1 className="text-white font-extrabold p-8 m-2 text-4xl">Skills</h1>
-      <div className=" md:w-1/2 grid grid-cols-6 items-center justify-center gap-2 m-2 ">
+      <div className=" md:w-1/2 grid grid-cols-6 items-center justify-center gap-2">
         {skillImages.map((skill, index) => (
           <div key={index} className="flex justify-center items-center p-0  hover:animate-rotate">
             <Avatar
               key={index}
-              className="w-16 h-16 rounded-lg "
+              className="md:w-16 md:h-16 w-12 h-12 rounded-lg "
             >
               <AvatarImage src={skill} />
               <AvatarFallback className="text-black">LOGO</AvatarFallback>
@@ -59,7 +59,7 @@ const Education = () => {
         ))}
       </div>
 
-      <div className="w-full flex justify-center p-2 md:p-8">
+      <div className="w-full flex justify-center p-4 md:p-8">
         {/* education map */}
         <div className="flex flex-col justify-center gap-4 w-full md:w-1/2 ">
           {education.map((edu, index) => (
@@ -71,9 +71,9 @@ const Education = () => {
                 <AvatarImage src={edu.logo} />
                 <AvatarFallback className="text-black">DM</AvatarFallback>
               </Avatar>
-              <Card className="p-2 w-full">
+              <Card className="md:p-2 w-full">
                 <CardContent>
-                  <div className="flex justify-between items-center mb-2">
+                  <div className="flex justify-between items-center md:mb-2">
                     <h2 className="font-bold text-sm md:text-lg">
                       {edu.company}
                     </h2>

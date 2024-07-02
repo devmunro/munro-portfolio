@@ -69,7 +69,7 @@ const Journey = () => {
         <div className="absolute left-1/2 transform -translate-x-1/2 w-2 bg-red-900 h-full"></div>
 
         {/* Work Experience Map */}
-        <div className="flex flex-col gap-8 w-full md:w-1/2 relative z-10">
+        <div className="flex flex-col gap-8 w-full md:w-1/2 relative z-5 p-4">
           {workExperience.map((job, index) => (
             <div
               key={index}
@@ -83,7 +83,7 @@ const Journey = () => {
                 <AvatarFallback className="text-black">LOGO</AvatarFallback>
               </Avatar>
               <Card className="p-2 w-full">
-                <CardContent className=" p-0">
+                <CardContent className=" p-4">
                   <div className="flex justify-between items-center  h-full">
                     <h2 className="font-bold text-sm md:text-lg ">
                       {job.company}
@@ -105,7 +105,7 @@ const Journey = () => {
           variant="link"
           className="animate-bounce text-white scroll-smooth absolute bottom-10 "
         >
-          <Link href="#Education">
+          <Link href="#Skills">
             <ArrowDown className="w-16 h-16 p-2 rounded-full bg-indigo-950 " />
           </Link>
         </Button>

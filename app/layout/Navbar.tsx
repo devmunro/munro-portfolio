@@ -11,11 +11,15 @@ const Navbar: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <nav className="fixed top-0 left-0 w-full p-4 bg-black z-10 ">
+    <nav className="fixed top-0 left-0 w-full p-4 bg-black z-10">
       <div className="md:hidden flex justify-between items-center">
         <span className="text-white text-xl">
-          <Avatar className=" w-8 h-8">
+          <Avatar className="w-8 h-8">
             <AvatarImage src="https://github.com/devmunro.png" />
             <AvatarFallback>DM</AvatarFallback>
           </Avatar>
@@ -25,37 +29,32 @@ const Navbar: React.FC = () => {
         </button>
       </div>
       <ul
-        className={`md:flex md:justify-end md:space-x-4 p-2 ${
+        className={`md:flex w-full text-right justify-end md:space-x-4 p-2 ${
           isOpen ? "block" : "hidden"
         } md:block`}
       >
         <li>
-          <Link href="#Home" className="text-white block md:inline">
+          <Link href="#Home" className="text-white block md:inline" onClick={closeMenu}>
             Home
           </Link>
         </li>
-        {/* <li>
-          <Link href="#About" className="text-white block md:inline">
-            About
-          </Link>
-        </li> */}
         <li>
-          <Link href="#Portfolio" className="text-white block md:inline">
+          <Link href="#Portfolio" className="text-white block md:inline" onClick={closeMenu}>
             Portfolio
           </Link>
         </li>
         <li>
-          <Link href="#Journey" className="text-white block md:inline">
+          <Link href="#Journey" className="text-white block md:inline" onClick={closeMenu}>
             Journey
           </Link>
         </li>
         <li>
-          <Link href="#Skills" className="text-white block md:inline">
+          <Link href="#Skills" className="text-white block md:inline" onClick={closeMenu}>
             Skills
           </Link>
         </li>
         <li>
-          <Link href="#Contact" className="text-white block md:inline">
+          <Link href="#Contact" className="text-white block md:inline" onClick={closeMenu}>
             Contact
           </Link>
         </li>

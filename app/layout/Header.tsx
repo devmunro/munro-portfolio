@@ -35,7 +35,7 @@ const Header = () => {
         variant="link"
         className="animate-bounce text-white scroll-smooth absolute bottom-10"
       >
-        <Link href="#Projects">
+        <Link href="#Portfolio">
           <ArrowDown className="w-16 h-16 p-2 rounded-full bg-black " />
         </Link>
       </Button>

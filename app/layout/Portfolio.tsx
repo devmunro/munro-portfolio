@@ -40,7 +40,7 @@ const Portfolio = () => {
 
   const [filteredProjects, setFilteredProjects] = useState(projectShowcase);
   const [currentPage, setCurrentPage] = useState(1);
-  const projectsPerPage = 3;
+  const projectsPerPage = 2;
 
   // Calculate the total number of pages
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
