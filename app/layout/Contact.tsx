@@ -17,6 +17,9 @@ import { Button } from "@/components/ui/button";
 import VerticalText from "./VerticalText";
 import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Github, Linkedin } from "lucide-react";
+import Link from 'next/link'
+
 
 const formSchema = z.object({
   name: z.string().min(2),
@@ -25,7 +28,6 @@ const formSchema = z.object({
 });
 
 const Contact = () => {
-  // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -34,10 +36,20 @@ const Contact = () => {
     },
   });
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
+      });
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   }
 
   return (
@@ -51,8 +63,23 @@ const Contact = () => {
           </Avatar>
           <h1 className="text-4xl font-bold">Contact Me</h1>
           <p>Get in touch with me by filling out the form.</p>
+          <div className="flex space-x-4 p-2">
+            <Button variant="default" size="icon">
+              <Link target="_blank" href="https://github.com/devmunro">
+                <Github />
+              </Link>
+            </Button>
+            <Button variant="default" size="icon">
+              <Link target="_blank" href="https://www.linkedin.com/in/dmunro/">
+                <Linkedin />
+              </Link>
+            </Button>
+            
+          </div>
         </div>
-        <Form {...form}>
+
+        {/*Form*/}
+        {/* <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-8 bg-white w-1/2 p-4 text-black h-full"
@@ -101,7 +128,7 @@ const Contact = () => {
 
             <Button type="submit">Submit</Button>
           </form>
-        </Form>
+        </Form> */}
       </div>
     </div>
   );
