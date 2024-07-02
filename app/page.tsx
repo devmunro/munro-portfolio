@@ -6,7 +6,7 @@ import Contact from "./layout/Contact";
 
 export default function Home() {
   return (
-    <div>
+    <div className="w-full">
       <div className="bg-black text-white ">
         <Navbar />
         <div id="Home" className="pt-16 h-screen ">

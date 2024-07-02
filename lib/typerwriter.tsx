@@ -39,7 +39,7 @@ const Typewriter: React.FC<TypewriterProps> = ({ words, speed = 50, pause = 2000
     }
   }, [index, isDeleting, words, wordIndex, speed, pause]);
 
-  return <p className='h-6'>{displayedText}</p>;
+  return <p className='h-6 font-semibold text-xl md:text-7xl'>{displayedText}</p>;
 };
 
 export default Typewriter;
