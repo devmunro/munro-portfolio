@@ -14,12 +14,12 @@ const Header = () => {
           <AvatarFallback>DM</AvatarFallback>
         </Avatar>
       </div>
-      <div className=" w-full md:w-1/2 md:h-full md:text-7xl text-md md:space-y-8 flex flex-col text-center items-center justify-center md:bg-black md:bg-opacity-40">
-        <h1 className="font-bold uppercase text-2xl md:text-7xl">
+      <div className=" w-full md:w-1/2 md:h-full md:text-4xl text-md md:space-y-8 flex flex-col text-center items-center justify-center md:bg-black md:bg-opacity-40">
+        <h1 className="font-bold uppercase text-2xl lg:text-7xl">
           Hi, I'm DAVID
         </h1>
-        <h2 className="md:text-4xl">I am a ...</h2>
-        <h3 className="font-semibold text-4xl md:text-7xl"></h3>
+        <h2 className="md:text-4xl text-md">I am a ...</h2>
+        <h3 className=""></h3>
         <div>
           <Typewriter
             words={[
@@ -31,10 +31,12 @@ const Header = () => {
           />
         </div>
       </div>
-      <Button variant="link" className="animate-bounce text-white scroll-smooth">
+      <Button
+        variant="link"
+        className="animate-bounce text-white scroll-smooth absolute bottom-10 md:hidden"
+      >
         <Link href="#Projects">
-          {" "}
-          <ArrowDown className=" flex justify-end w-16 h-16 mt-20 p-2  md:hidden rounded-full bg-black " />
+          <ArrowDown className="w-16 h-16 p-2 rounded-full bg-black md:hidden" />
         </Link>
       </Button>
     </div>
