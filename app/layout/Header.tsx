@@ -10,7 +10,7 @@ const Header = () => {
     <div className="h-full w-full flex flex-col md:flex-row items-center justify-center bg-[url('/second.png')] bg-cover bg-center ">
       <div className="flex items-center justify-center w-full md:w-1/2 md:h-full h-1/3">
         <Avatar className="shadow-md shadow-white w-72 h-72 md:w-96 md:h-96">
-          <AvatarImage src="https://github.com/devmunro.png" />
+          <AvatarImage src="/avatar.png" />
           <AvatarFallback>DM</AvatarFallback>
         </Avatar>
       </div>

@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
         <Link href="#home">
           <span className="text-white text-xl">
             <Avatar className="w-8 h-8">
-              <AvatarImage src="https://github.com/devmunro.png" />
+              <AvatarImage src="/avatar.png" />
               <AvatarFallback>DM</AvatarFallback>
             </Avatar>
           </span>
