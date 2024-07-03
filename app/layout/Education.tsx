@@ -1,5 +1,8 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
+import Link from "next/link";
 
 const Education = () => {
   const skillImages = [
@@ -25,7 +28,6 @@ const Education = () => {
       details: [
         "Participated in an immersive, 7-month software engineering training program.",
         "Completed hundreds of hours of practice and real-world industry projects.",
-        "Skills acquired in JavaScript, React, Vue Web Applications, OOP, Databases, SQL, NextJS, MongoDB, Node.js, HTML, CSS, Docker, Cloud.",
       ],
     },
     {
@@ -43,11 +45,14 @@ const Education = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-start md:items-center  text-center w-full h-full bg-black px-4">
+    <div className="flex flex-col justify-start md:items-center  text-center w-full h-full bg-black px-4 relative">
       <h1 className="text-white font-extrabold p-8 m-2 text-4xl">Skills</h1>
-      <div className=" md:w-1/2 grid grid-cols-6 items-center justify-center gap-2">
+      <div className=" md:w-1/2 grid grid-cols-6 items-center justify-center gap-2 p-2">
         {skillImages.map((skill, index) => (
-          <div key={index} className="flex justify-center items-center p-0  hover:animate-rotate">
+          <div
+            key={index}
+            className="flex justify-center items-center p-0  hover:animate-rotate"
+          >
             <Avatar
               key={index}
               className="md:w-16 md:h-16 w-12 h-12 rounded-lg "
@@ -71,7 +76,7 @@ const Education = () => {
                 <AvatarImage src={edu.logo} />
                 <AvatarFallback className="text-black">DM</AvatarFallback>
               </Avatar>
-              <Card className="md:p-2 w-full">
+              <Card className="p-2 w-full">
                 <CardContent>
                   <div className="flex justify-between items-center md:mb-2">
                     <h2 className="font-bold text-sm md:text-lg">
@@ -84,12 +89,24 @@ const Education = () => {
                   <h2 className="font-semibold text-left text-xs md:text-sm">
                     {edu.degree}
                   </h2>
-                  <p className="text-xs md:text-sm text-justify">{edu.details}</p>
+                  <p className="text-xs md:text-sm text-left py-2">
+                    {edu.details}
+                  </p>
                 </CardContent>
               </Card>
             </div>
           ))}
         </div>
+      </div>
+      <div className="flex justify-center w-full">
+        <Button
+          variant="link"
+          className="animate-bounce text-white scroll-smooth absolute bottom-10 "
+        >
+          <Link href="#Contact">
+          <ArrowDown className="w-16 h-8 p-2 rounded-full bg-indigo-950 " />
+          </Link>
+        </Button>
       </div>
     </div>
   );

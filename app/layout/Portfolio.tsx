@@ -8,6 +8,8 @@ import {
   PaginationContent,
   PaginationItem,
 } from "@/components/ui/pagination";
+import { ArrowDown } from "lucide-react";
+import Link from "next/link";
 
 const Portfolio = () => {
   const projectShowcase = [
@@ -98,7 +100,7 @@ const Portfolio = () => {
         Portfolio
       </h1>
 
-      <ul className="w-full flex items-center justify-center gap-2 px-2 text-xs md:text-sm">
+      <ul className="w-full hidden md:flex items-center justify-center gap-2 px-2 text-xs md:text-sm ">
         <label className="font-bold text-white mb-2 md:mb-0">Filter:</label>
         {[...languageOptions].map((tool, index) => (
           <li key={index} className="mb-2 md:mb-0">
@@ -127,7 +129,7 @@ const Portfolio = () => {
       </ul>
 
       <div className="w-full h-full p-2 flex flex-col items-center">
-        <div className="grid justify-center  grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 w-full h-full mt-2 md:mt-4 md:p-8">
+        <div className="grid justify-center grid-cols-1 md:grid-cols-2 gap-1 md:gap-4 w-full h-full md:mt-4 md:p-8">
           {currentProjects.map((project, index) => (
             <Card
               key={index}
@@ -157,10 +159,10 @@ const Portfolio = () => {
             </Card>
           ))}
         </div>
-        <Pagination className="mt-2 md:mt-4 w-full flex justify-center">
+        <Pagination className="mt-1 md:mt-4 w-full flex justify-center">
           <PaginationContent>
             <PaginationItem>
-              <button
+              <Button
                 className="px-3 py-1 text-sm font-medium"
                 onClick={(e) => {
                   e.preventDefault();
@@ -170,8 +172,8 @@ const Portfolio = () => {
                 }}
                 aria-disabled={currentPage === 1}
               >
-                Previous
-              </button>
+                Prev
+              </Button>
             </PaginationItem>
             {Array.from({ length: totalPages }, (_, i) => i + 1).map(
               (pageNumber) => (
@@ -193,7 +195,7 @@ const Portfolio = () => {
               )
             )}
             <PaginationItem>
-              <button
+              <Button
                 className="px-3 py-1 text-sm font-medium"
                 onClick={(e) => {
                   e.preventDefault();
@@ -204,10 +206,20 @@ const Portfolio = () => {
                 aria-disabled={currentPage === totalPages}
               >
                 Next
-              </button>
+              </Button>
             </PaginationItem>
           </PaginationContent>
         </Pagination>
+      </div>
+      <div className="flex justify-center w-full md:mt-8">
+        <Button
+          variant="link"
+          className="animate-bounce text-white scroll-smooth "
+        >
+          <Link href="#Journey">
+          <ArrowDown className="w-16 h-8 p-2 rounded-full bg-black " />
+          </Link>
+        </Button>
       </div>
     </div>
   );

@@ -106,7 +106,7 @@ const Journey = () => {
           className="animate-bounce text-white scroll-smooth absolute bottom-10 "
         >
           <Link href="#Skills">
-            <ArrowDown className="w-16 h-16 p-2 rounded-full bg-indigo-950 " />
+          <ArrowDown className="w-16 h-8 p-2 rounded-full bg-indigo-950 " />
           </Link>
         </Button>
       </div>
