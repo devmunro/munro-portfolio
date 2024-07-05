@@ -58,7 +58,7 @@ const Journey = () => {
   ];
 
   return (
-    <div className="w-full h-full bg-black relative p-4">
+    <div className="w-full h-full bg-black relative md:p-4">
       <h1 className="text-white text-center font-extrabold p-4 text-4xl">
         Journey
       </h1>
@@ -69,11 +69,11 @@ const Journey = () => {
         <div className="absolute left-1/2 transform -translate-x-1/2 w-2 bg-red-900 h-full"></div>
 
         {/* Work Experience Map */}
-        <div className="flex flex-col gap-8 w-full md:w-1/2 relative z-5 p-4">
+        <div className="flex flex-col gap-8 w-full md:w-1/2 relative z-5 px-1 md:p-4">
           {workExperience.map((job, index) => (
             <div
               key={index}
-              className="flex items-center space-x-2 p-4 bg-red-900 rounded-md shadow-md relative"
+              className="flex items-center space-x-2 md:p-4 bg-red-900 rounded-md shadow-md relative"
             >
               {/* Timeline Dot */}
               <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-16 w-4 h-6 bg-red-600 rounded-full border"></div>

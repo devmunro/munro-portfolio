@@ -46,7 +46,7 @@ const Education = () => {
 
   return (
     <div className="flex flex-col justify-start md:items-center  text-center w-full h-full bg-black px-4 relative">
-      <h1 className="text-white font-extrabold p-8 m-2 text-4xl">Skills</h1>
+      <h1 className="text-white font-extrabold p-2 md:p-8 m-2 text-4xl">Skills</h1>
       <div className=" md:w-1/2 grid grid-cols-6 items-center justify-center gap-2 p-2">
         {skillImages.map((skill, index) => (
           <div
@@ -55,7 +55,7 @@ const Education = () => {
           >
             <Avatar
               key={index}
-              className="md:w-16 md:h-16 w-12 h-12 rounded-lg "
+              className="md:w-16 md:h-16 w-8 h-8 rounded-lg "
             >
               <AvatarImage src={skill} />
               <AvatarFallback className="text-black">LOGO</AvatarFallback>
@@ -64,7 +64,7 @@ const Education = () => {
         ))}
       </div>
 
-      <div className="w-full flex justify-center p-4 md:p-8">
+      <div className="w-full flex justify-center md:p-8">
         {/* education map */}
         <div className="flex flex-col justify-center gap-4 w-full md:w-1/2 ">
           {education.map((edu, index) => (
@@ -72,11 +72,11 @@ const Education = () => {
               key={index}
               className="flex items-center space-x-2 p-2 text-white rounded-md shadow-md bg-indigo-900"
             >
-              <Avatar className="w-16 h-16 md:w-24 md:h-24 items-center rounded-none border-2 md:border-4">
+              <Avatar className="w-12 h-12 md:w-24 md:h-24 items-center rounded-none border-2 md:border-4">
                 <AvatarImage src={edu.logo} />
                 <AvatarFallback className="text-black">DM</AvatarFallback>
               </Avatar>
-              <Card className="p-2 w-full">
+              <Card className="md:p-2 w-full">
                 <CardContent>
                   <div className="flex justify-between items-center md:mb-2">
                     <h2 className="font-bold text-sm md:text-lg">
@@ -89,7 +89,7 @@ const Education = () => {
                   <h2 className="font-semibold text-left text-xs md:text-sm">
                     {edu.degree}
                   </h2>
-                  <p className="text-xs md:text-sm text-left py-2">
+                  <p className="text-xs md:text-sm text-left md:py-2">
                     {edu.details}
                   </p>
                 </CardContent>
