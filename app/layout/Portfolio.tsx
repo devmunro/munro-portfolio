@@ -211,16 +211,7 @@ const Portfolio = () => {
           </PaginationContent>
         </Pagination>
       </div>
-      <div className="flex justify-center w-full md:mt-8">
-        <Button
-          variant="link"
-          className="animate-bounce text-white scroll-smooth "
-        >
-          <Link href="#Journey">
-          <ArrowDown className="w-16 h-8 p-2 rounded-full bg-black " />
-          </Link>
-        </Button>
-      </div>
+     
     </div>
   );
 };

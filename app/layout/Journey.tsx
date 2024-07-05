@@ -100,16 +100,6 @@ const Journey = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center w-full">
-        <Button
-          variant="link"
-          className="animate-bounce text-white scroll-smooth absolute bottom-10 "
-        >
-          <Link href="#Skills">
-          <ArrowDown className="w-16 h-8 p-2 rounded-full bg-indigo-950 " />
-          </Link>
-        </Button>
-      </div>
     </div>
   );
 };
