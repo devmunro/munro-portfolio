@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full p-4 bg-black z-10">
+    <nav className="w-full p-4 bg-black">
       <div className="md:hidden flex justify-between items-center">
         <Link href="#home">
           <span className="text-white text-xl">

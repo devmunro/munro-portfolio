@@ -23,21 +23,8 @@ const Portfolio = () => {
       image: "/project2.png",
       tools: ["javascript", "next.js", "tailwind css"],
     },
-    {
-      title: "Next.JS Project",
-      image: "https://via.placeholder.com/150",
-      tools: ["next.js", "react", "node.js"],
-    },
-    {
-      title: "PHP Project",
-      image: "https://via.placeholder.com/150",
-      tools: ["php", "laravel", "mysql"],
-    },
-    {
-      title: "JS Project 2",
-      image: "https://via.placeholder.com/150",
-      tools: ["javascript", "express", "bootstrap"],
-    },
+    
+    
   ];
 
   const [filteredProjects, setFilteredProjects] = useState(projectShowcase);
@@ -96,7 +83,7 @@ const Portfolio = () => {
 
   return (
     <div className="flex flex-col items-center w-full h-full bg-blue-950">
-      <h1 className="text-white font-extrabold text-4xl text-center md:text-left pt-8 pb-2">
+      <h1 className="text-white font-extrabold text-4xl text-center p-4">
         Portfolio
       </h1>
 

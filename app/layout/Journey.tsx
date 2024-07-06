@@ -64,7 +64,7 @@ const Journey = () => {
       </h1>
 
       {/* Container for timeline and items */}
-      <div className="relative w-full flex justify-center ">
+      <div className="relative w-full flex justify-center  p-4">
         {/* Timeline Line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 w-2 bg-red-900 h-full"></div>
 
@@ -73,7 +73,7 @@ const Journey = () => {
           {workExperience.map((job, index) => (
             <div
               key={index}
-              className="flex items-center space-x-2 md:p-4 bg-red-900 rounded-md shadow-md relative"
+              className="flex items-center space-x-2 p-2 md:p-4 bg-red-900 rounded-md shadow-md relative"
             >
               {/* Timeline Dot */}
               <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-16 w-4 h-6 bg-red-600 rounded-full border"></div>
