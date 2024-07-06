@@ -8,8 +8,6 @@ import {
   PaginationContent,
   PaginationItem,
 } from "@/components/ui/pagination";
-import { ArrowDown } from "lucide-react";
-import Link from "next/link";
 
 const Portfolio = () => {
   const projectShowcase = [
@@ -19,12 +17,16 @@ const Portfolio = () => {
       tools: ["javascript", "react", "mongodb", "tailwind css"],
     },
     {
+      title: "Yacht Club",
+      image: "/project3.png",
+      tools: ["javascript", "typescript", "tailwind css", "shadcn"],
+    },
+
+    {
       title: "Movie DB",
       image: "/project2.png",
       tools: ["javascript", "next.js", "tailwind css"],
     },
-    
-    
   ];
 
   const [filteredProjects, setFilteredProjects] = useState(projectShowcase);
@@ -198,7 +200,6 @@ const Portfolio = () => {
           </PaginationContent>
         </Pagination>
       </div>
-     
     </div>
   );
 };
